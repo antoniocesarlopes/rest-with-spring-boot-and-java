@@ -27,10 +27,8 @@ jobs:
         cache: maven
         
     - name: Build with Maven
-      working-directory: ./rest-with-spring-boot-and-java\restWithSpringBootUdemy
-      run: |
-        - pwd
-        - mvn clean package
+      working-directory: ./rest-with-spring-boot-and-java/restWithSpringBootUdemy
+      run: mvn clean package
       
     - name: Build with Docker Compose
       working-directory: ./rest-with-spring-boot-and-java
