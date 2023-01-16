@@ -1,8 +1,8 @@
 server:
-  port: 80
+  port: 8080
 # cors Configs 
 cors:
-  originPatterns: http://localhost:3000,http://localhost:8080
+  originPatterns: http://localhost:3000,http://localhost:8080,http://localhost:80
 
 # jwt spring security Configs 
 security:
