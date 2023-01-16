@@ -35,8 +35,9 @@ jobs:
       run: docker compose build    
       
     - name: Push to Docker Hub
-      run: docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:test     
-           docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:test
+      run: docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
+           docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:${{ github.run_id }} 
+           docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:${{ github.run_id }}
            docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
